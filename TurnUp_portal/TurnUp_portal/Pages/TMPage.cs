@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,14 +56,15 @@ namespace TurnUp_portal.Pages
             lastPageButton.Click();
 
             IWebElement newCode = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[last()]/td[1]"));
-            if (newCode.Text == "TA Programme")
-            {
-                Console.WriteLine("New Material Record Created Successfully");
-            }
-            else
-            {
-                Console.WriteLine("New record has not been created");
-            }
+            //if (newCode.Text == "TA Programme")
+            //{
+            //    Assert.Pass("New Material Record Created Successfully");
+            //}
+            //else
+            //{
+            //    Assert.Fail("New record has not been created");
+            //}
+            Assert.That(newCode.Text == "TA Programme", "New record has not been created");
         }
         public void CreateTimeRecord(IWebDriver driver)
            {
@@ -106,15 +108,15 @@ namespace TurnUp_portal.Pages
                lastPageButton.Click();
 
                IWebElement newCode = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[last()]/td[1]"));
-               if (newCode.Text == "TA Programme")
-               {
-                   Console.WriteLine("New Material Record Created Successfully");
-               }
-               else
-               {
-                   Console.WriteLine("New record has not been created");
-               }
-
+               //if (newCode.Text == "TA Programme")
+               //{
+               //    Assert.Pass("New Material Record Created Successfully");
+               //}
+               //else
+               //{
+               //    Assert.Fail("New record has not been created");
+               //}
+            Assert.That(newCode.Text == "TA Programme", "New time record has not been created");
            }
         /*
            public void DeleteRecord()
