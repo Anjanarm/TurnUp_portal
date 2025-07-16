@@ -36,6 +36,19 @@ namespace TurnUp_portal.Tests
             TMPage tmPageObj = new TMPage();
             tmPageObj.CreateMaterialRecord(driver);
         }
+        [Test]
+        public void DeleteMaterial_Test()
+        {
+            TMPage tmPageObj = new TMPage();
+            tmPageObj.DeleteRecord(driver);
+        }
+        [Test]
+        public void EditMaterial_Test()
+        {
+            TMPage tmPageObj = new TMPage();
+            tmPageObj.EditRecord(driver);
+            
+        }
         [TearDown]
         public void CloseTest_Run()
         {
