@@ -1,2 +1,2 @@
 # TurnUp_portal
-TurnUP Portal Regression Test Suite
+TurnUP Portal Testing using Page Object Model
