@@ -99,7 +99,9 @@ namespace TurnUp_portal.Pages
             
             Assert.That(newCode.Text == "TA Programme", "New time record has not been created");
         }
-        //Create a record with specific code and check the newly created record
+        /*Create a record with specific code and check the
+        newly created record has been deleted
+        */
         public void DeleteRecord(IWebDriver driver)
         {
 
@@ -147,7 +149,7 @@ namespace TurnUp_portal.Pages
             Assert.That(currentLast.Text != "Code to delete", "Delete operation is not successful");
         
         }
-        //Edit the Code record of the last element
+        //Edit the Code element of last element field
         public void EditRecord(IWebDriver driver)
         {
             IWebElement lastPageButton = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[4]/a[4]/span"));
