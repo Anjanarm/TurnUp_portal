@@ -1,18 +1,11 @@
 ﻿using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TurnUp_portal.Utilities;
 
 namespace TurnUp_portal.Pages
 {
     public class TMPage
     {
+        
         public void CreateMaterialRecord(IWebDriver driver)
         {
 
@@ -106,7 +99,7 @@ namespace TurnUp_portal.Pages
             
             Assert.That(newCode.Text == "TA Programme", "New time record has not been created");
         }
-
+        //Create a record with specific code and check the newly created record
         public void DeleteRecord(IWebDriver driver)
         {
 
@@ -154,6 +147,7 @@ namespace TurnUp_portal.Pages
             Assert.That(currentLast.Text != "Code to delete", "Delete operation is not successful");
         
         }
+        //Edit the Code record of the last element
         public void EditRecord(IWebDriver driver)
         {
             IWebElement lastPageButton = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[4]/a[4]/span"));

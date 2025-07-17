@@ -1,9 +1,5 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TurnUp_portal.Utilities;
 
 namespace TurnUp_portal.Pages
 {
@@ -12,16 +8,16 @@ namespace TurnUp_portal.Pages
         public void LoginActions(IWebDriver driver)
         {
             //Launch TurnUp Portal
-            driver.Navigate().GoToUrl("http://horse.industryconnect.io");
+            driver.Navigate().GoToUrl(Config.BaseUrl);
             driver.Manage().Window.Maximize();
 
             //Identify username textbox and enter username
             IWebElement usernameTextBox = driver.FindElement(By.Id("UserName"));
-            usernameTextBox.SendKeys("hari");
+            usernameTextBox.SendKeys(Config.Username);
 
             //Identify password textbox and enter password
             IWebElement passwordTextbox = driver.FindElement(By.Id("Password"));
-            passwordTextbox.SendKeys("123123");
+            passwordTextbox.SendKeys(Config.Password);
 
             //Identify Login button and click on it
             IWebElement loginButton = driver.FindElement(By.XPath("//*[@id=\"loginForm\"]/form/div[3]/input[1]"));
