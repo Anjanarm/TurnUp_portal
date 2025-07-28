@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TurnUp_portal.Pages;
 using TurnUp_portal.Utilities;
@@ -11,7 +12,9 @@ namespace TurnUp_portal.Tests
         [SetUp]
         public void SetupSteps()
         {
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.AddUserProfilePreference("profile.password_manager_leak_detection", false);
+            driver = new ChromeDriver(options);
             LoginPage loginPageObj = new LoginPage();
             loginPageObj.LoginActions(driver);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1800);
